@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>English → Hindi Translator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- Main container -->
+    <div class="container">
+
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="logo">
+                🌐
+            </div>
+
+            <div>
+                <h1>English → Hindi</h1>
+
+                <p>
+                    AI Powered Language Translator
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- Main translation card -->
+        <main class="translator-card">
+
+
+            <!-- Language bar -->
+            <div class="language-bar">
+
+                <div class="language">
+                    🇬🇧 English
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="language">
+                    🇮🇳 Hindi
+                </div>
+
+            </div>
+
+
+            <!-- Translation boxes -->
+            <div class="translation-area">
+
+
+                <!-- English input -->
+                <div class="text-box">
+
+                    <div class="box-header">
+
+                        <span>
+                            English
+                        </span>
+
+                        <span id="charCount">
+                            0 / 500
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="englishText"
+                        maxlength="500"
+                        placeholder="Enter an English sentence..."
+                    ></textarea>
+
+
+                    <div class="box-footer">
+
+                        <button
+                            id="clearBtn"
+                            class="small-btn">
+                            Clear
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hindi output -->
+                <div class="text-box output-box">
+
+                    <div class="box-header">
+
+                        <span>
+                            Hindi
+                        </span>
+
+                        <button
+                            id="copyBtn"
+                            class="copy-btn">
+                            📋 Copy
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="hindiText"
+                        class="translation-result">
+
+                        Your Hindi translation
+                        will appear here...
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Translate button -->
+            <button
+                id="translateBtn"
+                class="translate-btn">
+
+                <span id="buttonText">
+                    Translate
+                </span>
+
+                <span id="loadingSpinner"
+                      class="spinner hidden">
+                </span>
+
+            </button>
+
+
+            <!-- Status -->
+            <div
+                id="statusMessage"
+                class="status">
+            </div>
+
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                Powered by
+                <strong>MarianMT</strong>
+                • Helsinki-NLP
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
